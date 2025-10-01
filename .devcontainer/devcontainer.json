@@ -1,0 +1,24 @@
+{
+  "name": "C++ Dev",
+  "build": { "dockerfile": "Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "features": {},
+  "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+  "workspaceFolder": "${localWorkspaceFolder}",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
+  ],
+  "postCreateCommand": "cmake --version && make --version && g++ --version",
+  "postStartCommand": "bash -lc 'chmod 700 ~/.ssh 2>/dev/null || true; find ~/.ssh -type f -exec chmod 600 {} \\; 2>/dev/null || true'"
+}
+
+
