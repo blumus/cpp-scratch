@@ -1,5 +1,6 @@
-# Build directories
-**/build/
+# Build directories (track dir, ignore files)
+**/build/*
+!**/build/.gitkeep
 
 # Object files
 *.o
