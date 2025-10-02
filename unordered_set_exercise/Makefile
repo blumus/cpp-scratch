@@ -7,7 +7,7 @@ CXX ?= g++
 BUILD ?= Debug
 
 # Flags
-COMMON_CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic
+COMMON_CXXFLAGS := -std=c++23 -Wall -Wextra -Wpedantic
 ifeq ($(BUILD),Debug)
   CXXFLAGS ?= $(COMMON_CXXFLAGS) -g -O0
 else ifeq ($(BUILD),Release)

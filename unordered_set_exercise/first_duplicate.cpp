@@ -8,8 +8,8 @@ std::optional<int> find_first_duplicate(const std::vector<int>& nums) {
     std::unordered_set<int> seen;
     seen.reserve(nums.size());
     for (const int value : nums) {
-        if (seen.count(value)) {
-            return value; // C++20: seen.contains(value)
+        if (seen.contains(value)) {
+            return value; 
         }
         seen.insert(value);
     }
